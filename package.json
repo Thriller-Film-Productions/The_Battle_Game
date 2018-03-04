@@ -1,0 +1,5 @@
+{
+  "name": "The battle game",
+  "version": "alpha",
+  "main": "setup.js"
+}
