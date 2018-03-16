@@ -3,9 +3,13 @@ function setup() {
 }
 
 function draw() {
-  background(random(0, 255));
+  image(assets.start, 0, 0, width, height);
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+}
+
+function preload() {
+  assets.start = loadImage("assets/start.png");
 }
