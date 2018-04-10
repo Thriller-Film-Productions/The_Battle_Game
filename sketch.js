@@ -1,5 +1,6 @@
 function setup() {
   createCanvas(windowWidth, windowHeight).position(0, 0).parent("#container");
+  randColor = color(255, 0, 0);
   load([{
     type: "image",
     name: "start",
@@ -8,8 +9,15 @@ function setup() {
 }
 
 function draw() {
+  colorMode(RGB);
   if (gameData.page === 0) {
-
+    background(0, 196, 0);
+    noStroke();
+    translate(width / 2, height / 2);
+    colorMode(HSB);
+    changeColor();
+    fill(randColor);
+    ellipse(0, 0, abs(sin(millis() / 500) * width / 4), abs(sin(millis() / 500) * width / 4));
   } else if (gameData.page === 1) {
     image(assets.start, 0, 0, width, height);
     fill("#c46200");
@@ -26,6 +34,7 @@ function draw() {
     fill("#c400c4");
     textSize(width / 54);
     text("Create game", width / 2 - textWidth("Create game") / 2, height / 2 - height / 8 + width / 108);
+    // if ()
   }
 }
 
